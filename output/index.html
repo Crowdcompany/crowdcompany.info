@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crowdcompany UG - Multi-Cloud AI Solutions. Zertifiziert für AWS, Azure & Google Cloud. Cloud Computing und KI-Beratung aus der Region Köln/Bonn.">
+    <title>Crowdcompany UG | Multi-Cloud AI Solutions & Cloud Consulting</title>
+    <link rel="icon" href="https://crowdcompany.s3.eu-west-1.amazonaws.com/corporate-identity/LogoRund.png">
+    <!-- Pico CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        :root {
+            /* Farben aus index_old.html */
+            --pico-primary: #2d2d2d;
+            --pico-primary-hover: #404040;
+            --pico-border-radius: 0px;
+            /* Light mode - Farben aus index_old.html */
+            --pico-background-color: #ffffff;
+            --pico-text-color: #1a1a1a;
+            --pico-muted-color: #555555;
+            --pico-muted-border-color: #d0d0d0;
+            --pico-border-color: #d0d0d0;
+            --pico-link-color: #4a90d9;
+            --pico-link-hover-color: #2d2d2d;
+            --pico-spacing: 1rem;
+            /* Überschriften in Schwarz */
+            --pico-h-color: #1a1a1a;
+        }
+
+        /* Body Hintergrund aus index_old.html */
+        body {
+            background-color: #f5f5f5;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        /* Custom Hero mit Hintergrundbild */
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                        url('PremiumBusinessAutomation.png') center/cover no-repeat;
+            padding: calc(var(--pico-spacing) * 6) var(--pico-spacing);
+            color: white;
+        }
+
+        .hero-section h1 {
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: var(--pico-spacing);
+        }
+
+        .hero-tagline {
+            font-size: 1.8rem;
+            color: white;
+            background: rgba(26, 54, 93, 0.85);
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            max-width: 100%;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .hero-play-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .hero-play-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .hero-play-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
+            margin-left: 3px;
+        }
+
+        /* Navigation aus index_old.html */
+        header {
+            background-color: #ffffff;
+            padding: 1px 3% 30px 3%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 180px;
+            width: 180px;
+            flex-shrink: 0;
+        }
+
+        #rb-certifications {
+            margin-left: 20px;
+            flex-shrink: 0;
+        }
+
+        .header-container > #rb-certifications .rb-cert-badge {
+            padding: 0.2rem;
+            min-width: 60px;
+            max-width: 80px;
+        }
+
+        .header-container > #rb-certifications .rb-cert-badge img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .header-container > #rb-certifications .rb-cert-badge-name {
+            font-size: 0.5rem;
+        }
+
+        .header-container > #rb-certifications .rb-cert-header {
+            display: none;
+        }
+
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            flex: 1;
+        }
+
+        .top-bar {
+            display: flex;
+            gap: 30px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .top-bar a {
+            color: #555555;
+        }
+
+        .top-bar a:hover {
+            color: #2d2d2d;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 16px;
+        }
+
+        nav a {
+            color: #1a1a1a;
+            font-weight: 500;
+            font-size: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        nav a:hover {
+            color: #2d2d2d;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #1a1a1a;
+        }
+
+        /* Section spacing */
+        section {
+            padding: calc(var(--pico-spacing) * 5) var(--pico-spacing);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: calc(var(--pico-spacing) * 3);
+        }
+
+        .section-title h2 {
+            margin-bottom: var(--pico-spacing);
+            color: #1a1a1a;
+        }
+
+        .section-title h3 {
+            margin-bottom: var(--pico-spacing);
+            color: #1a1a1a;
+        }
+
+        .section-title p {
+            color: #555555;
+        }
+
+        /* Cards */
+        .custom-card {
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+            border-radius: 0px;
+            padding: var(--pico-spacing);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Service grid */
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--pico-spacing);
+        }
+
+        .service-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: var(--pico-spacing);
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+            border-radius: 0px;
+            transition: background-color 0.3s ease;
+            text-align: left;
+        }
+
+        .service-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .service-icon {
+            font-size: 1.5rem;
+        }
+
+        .service-item strong {
+            color: #1a1a1a;
+        }
+
+        .service-benefit {
+            font-size: 14px;
+            color: #555555;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Target cards */
+        .target-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--pico-spacing);
+            margin-bottom: calc(var(--pico-spacing) * 4);
+        }
+
+        .target-card {
+            padding: var(--pico-spacing);
+            border-left: 4px solid #2d2d2d;
+            background: #f5f5f5;
+        }
+
+        .target-card h3 {
+            margin-bottom: var(--pico-spacing);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #d0d0d0;
+            color: #1a1a1a;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .benefit-list li {
+            padding: 0.5rem 0;
+            font-size: 14px;
+            color: #555555;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .benefit-list .check {
+            color: #2d2d2d;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        /* Pillars */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--pico-spacing);
+            margin: calc(var(--pico-spacing) * 3) 0;
+        }
+
+        .pillar-card {
+            background: #ffffff;
+            padding: var(--pico-spacing);
+            border: 1px solid #d0d0d0;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .pillar-card:hover {
+            border-color: #2d2d2d;
+            transform: translateY(-5px);
+        }
+
+        .pillar-card:hover {
+            border-color: #2d2d2d;
+        }
+
+        .pillar-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: var(--pico-spacing);
+        }
+
+        .pillar-card h4 {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .pillar-card p {
+            font-size: 12px;
+            color: #555555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Stats row */
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: calc(var(--pico-spacing) * 4);
+            margin: calc(var(--pico-spacing) * 4) 0;
+            padding: var(--pico-spacing) 0;
+            border-top: 1px solid #d0d0d0;
+            border-bottom: 1px solid #d0d0d0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 42px;
+            font-weight: 700;
+            color: #2d2d2d;
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 14px;
+            color: #555555;
+            margin-top: 0.5rem;
+        }
+
+        /* Team cards */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: calc(var(--pico-spacing) * 2);
+            margin-top: calc(var(--pico-spacing) * 3);
+        }
+
+        .team-card {
+            text-align: center;
+            padding: var(--pico-spacing);
+            background: #ffffff;
+            border: 1px solid #d0d0d0;
+            border-radius: 0px;
+        }
+
+        .team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 20%;
+            margin-bottom: var(--pico-spacing);
+            border: 3px solid #2d2d2d;
+        }
+
+        .team-name {
+            font-size: 24px;
+            color: #2d2d2d;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            font-size: 14px;
+            color: #555555;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .team-btn {
+            display: inline-block;
+            background-color: transparent;
+            color: #1a1a1a;
+            padding: 8px 20px;
+            border: 1px solid #1a1a1a;
+            border-radius: 0px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .team-btn:hover {
+            background-color: #2d2d2d;
+            color: #ffffff;
+            border-color: #2d2d2d;
+        }
+
+        /* AI Server CTA */
+        .ai-cta-section {
+            background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .ai-cta-section h2 {
+            color: white;
+            margin-bottom: var(--pico-spacing);
+        }
+
+        .ai-cta-section p {
+            color: rgba(255,255,255,0.95);
+            margin-bottom: calc(var(--pico-spacing) * 2);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Additional services */
+        .additional-services {
+            background: #ffffff;
+            padding: calc(var(--pico-spacing) * 5) var(--pico-spacing);
+        }
+
+        .additional-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--pico-spacing);
+        }
+
+        .additional-card {
+            background: #f5f5f5;
+            padding: var(--pico-spacing);
+            border-left: 4px solid #2d2d2d;
+            border-radius: 0px;
+        }
+
+        .additional-card h4 {
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .additional-card p {
+            color: #555555;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2d2d2d;
+            color: white;
+            padding: calc(var(--pico-spacing) * 4) 3% calc(var(--pico-spacing) * 2);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: calc(var(--pico-spacing) * 3);
+            margin-bottom: calc(var(--pico-spacing) * 3);
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: var(--pico-spacing);
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-legal {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: var(--pico-spacing);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--pico-spacing);
+            margin-top: var(--pico-spacing);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+            opacity: 0.8;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-logo {
+            max-width: 200px;
+            margin-bottom: var(--pico-spacing);
+        }
+
+        .footer-section p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        /* Credential cards */
+        .credential-section {
+            background: #ffffff;
+            padding: calc(var(--pico-spacing) * 5) var(--pico-spacing);
+        }
+
+        .credential-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .credential-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #f5f5f5;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+
+        .credential-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .credential-card strong {
+            display: block;
+            font-size: 0.95rem;
+            color: #1a1a1a;
+            margin-bottom: 0.2rem;
+        }
+
+        .credential-card span {
+            font-size: 0.8rem;
+            color: #555555;
+        }
+
+        .credential-card span:last-of-type {
+            font-style: italic;
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #e8e8e8;
+            padding: calc(var(--pico-spacing) * 5) var(--pico-spacing);
+        }
+
+        .about-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto calc(var(--pico-spacing) * 4);
+        }
+
+        .about-intro h2 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: var(--pico-spacing);
+        }
+
+        .about-intro p {
+            font-size: 14px;
+            color: #555555;
+            line-height: 1.8;
+            margin-bottom: var(--pico-spacing);
+        }
+
+        .about-lead {
+            font-size: 16px !important;
+            color: #1a1a1a !important;
+            font-weight: 600;
+            line-height: 1.6 !important;
+        }
+
+        .about-text-large {
+            font-size: 18px !important;
+            line-height: 1.8 !important;
+        }
+
+        .regions-badge {
+            display: inline-block;
+            font-size: 16px;
+            color: #2d2d2d;
+            font-weight: 600;
+            margin-top: var(--pico-spacing);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-subtitle {
+            font-size: 24px;
+            color: #1a1a1a;
+            text-align: center;
+            margin: calc(var(--pico-spacing) * 4) 0;
+            font-weight: 600;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 767px) {
+            .hero-section {
+                min-height: 80vh;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+                padding: 15px 20px;
+                gap: 10px;
+            }
+
+            .hero-play-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+
+            .hero-play-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .target-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-row {
+                gap: var(--pico-spacing) * 2;
+            }
+
+            .top-bar {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                padding: var(--pico-spacing);
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: var(--pico-spacing);
+            }
+
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            #rb-certifications {
+                display: none;
+            }
+        }
+    </style>
+    <script id="usercentrics-cmp" async data-settings-id="yVCkyyvbrUpKV8" src="https://app.usercentrics.eu/browser-ui/latest/loader.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <img src="https://crowdcompany.s3.eu-west-1.amazonaws.com/corporate-identity/LogoRund.png" alt="Crowdcompany UG Logo" class="logo">
+            <div id="rb-certifications" data-variant="compact"></div>
+            <div class="header-right">
+                <div class="top-bar">
+                    <a href="mailto:raimund.bauer@crowdcompany-ug.com">raimund.bauer@crowdcompany-ug.com</a>
+                    <a href="tel:+4924862379991">+49 2486 2379991</a>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Menü öffnen">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#credentials">Zertifizierungen</a></li>
+                        <li><a href="#ai-server">AI Server Setup</a></li>
+                        <li><a href="#about">Über uns</a></li>
+                        <li><a href="#contact">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Multi-Cloud AI Solutions</h1>
+        <p class="hero-tagline">
+            <a href="https://www.youtube.com/@premiumbusinessautomation/videos" target="_blank" rel="noopener noreferrer" class="hero-play-btn" aria-label="Videos auf YouTube ansehen">
+                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </a>
+            AWS, Azure & Google Cloud certified
+        </p>
+    </section>
+
+    <!-- Credentials Section -->
+    <section id="credentials" class="credential-section">
+        <div class="section-title">
+            <h2>Verifizierte Zertifizierungen</h2>
+            <p>Alle Zertifikate durch Klick verifizierbar</p>
+        </div>
+        <div id="credentials-content"></div>
+    </section>
+
+    <script>
+    const credentialsData = {
+        de: {
+            title: 'Verifizierte Zertifizierungen',
+            subtitle: 'Alle Zertifikate durch Klick verifizierbar',
+            certs: [
+                { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', desc: 'Cloud-Konzepte, Security, Pricing' },
+                { name: 'Microsoft Azure Fundamentals (AZ-900)', issuer: 'Microsoft', desc: 'Core Azure Services, Security, Compliance' },
+                { name: 'Microsoft Azure AI Fundamentals (AI-900)', issuer: 'Microsoft', desc: 'Machine Learning, AI Services, Responsible AI' },
+                { name: 'Google Cloud Digital Leader', issuer: 'Google Cloud', desc: 'Cloud-Transformation, Data & AI Strategy' },
+                { name: 'Google Generative AI Leader', issuer: 'Google Cloud', desc: 'GenAI Applications, LLMs, AI Ethics' }
+            ]
+        },
+        en: {
+            title: 'Verified Certifications',
+            subtitle: 'All certificates verifiable by clicking',
+            certs: [
+                { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', desc: 'Cloud concepts, Security, Pricing' },
+                { name: 'Microsoft Azure Fundamentals (AZ-900)', issuer: 'Microsoft', desc: 'Core Azure Services, Security, Compliance' },
+                { name: 'Microsoft Azure AI Fundamentals (AI-900)', issuer: 'Microsoft', desc: 'ML, AI Services, Responsible AI' },
+                { name: 'Google Cloud Digital Leader', issuer: 'Google Cloud', desc: 'Cloud Transformation, Data & AI Strategy' },
+                { name: 'Google Generative AI Leader', issuer: 'Google Cloud', desc: 'GenAI Apps, LLMs, AI Ethics' }
+            ]
+        }
+    };
+
+    function initCredentials() {
+        const browserLang = (navigator.language || navigator.userLanguage || 'de').split('-')[0].toLowerCase();
+        const data = credentialsData[browserLang] || credentialsData.de;
+
+        const badges = [
+            { color: '#FF9900', url: 'https://www.credly.com/badges/06c1a0fb-ec0c-4f9a-9b98-491064ba863f/public_url' },
+            { color: '#0078D4', url: 'https://learn.microsoft.com/api/credentials/share/de-de/RaimundBauer-9096/E433F4ED798678ED?sharingId=DD0D50C6C2600A10' },
+            { color: '#0078D4', url: 'https://learn.microsoft.com/api/credentials/share/de-de/RaimundBauer-9096/85393A84D699698D?sharingId=DD0D50C6C2600A10' },
+            { color: '#4285F4', url: 'https://www.credly.com/badges/a570daac-301d-4d4b-8161-d93a33aa281f/public_url' },
+            { color: '#34A853', url: 'https://www.credly.com/badges/74890765-5a15-4988-96a9-2c07439b2cf3/public_url' }
+        ];
+
+        let html = '<div class="credential-grid">';
+
+        data.certs.forEach((cert, index) => {
+            const badge = badges[index];
+            const imgUrl = index === 0 ? 'https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png' :
+                          index < 3 ? 'https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg' :
+                          index === 3 ? 'https://images.credly.com/size/340x340/images/44994cda-b5b0-44cb-9a6d-d29b57163073/image.png' :
+                          'https://images.credly.com/size/680x680/images/ec23e41a-0f32-4a98-9c00-28925621b281/blob';
+            html += `
+                <div class="credential-card" style="border-left-color: ${badge.color};">
+                    <a href="${badge.url}" target="_blank" rel="noopener noreferrer">
+                        <img src="${imgUrl}" alt="${cert.name}">
+                    </a>
+                    <div>
+                        <strong>${cert.name}</strong>
+                        <span>${cert.issuer}</span>
+                        <span>${cert.desc}</span>
+                    </div>
+                </div>
+            `;
+        });
+
+        html += '</div>';
+        document.getElementById('credentials-content').innerHTML = html;
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCredentials);
+    } else {
+        initCredentials();
+    }
+    </script>
+
+    <!-- Services Section -->
+    <section id="services" style="background-color: #ffffff;">
+        <div class="section-title">
+            <h3>Unsere KI & Cloud Services</h3>
+            <p>Multi-Cloud Expertise für Ihr Unternehmen</p>
+        </div>
+
+        <!-- Zielgruppen -->
+        <div class="target-grid">
+            <div class="target-card">
+                <h4>☁️ Cloud Solutions</h4>
+                <ul class="benefit-list">
+                    <li><span class="check">✓</span> AWS, Azure & Google Cloud Architektur</li>
+                    <li><span class="check">✓</span> Cloud Migration & Transformation</li>
+                    <li><span class="check">✓</span> Multi-Cloud Strategien</li>
+                    <li><span class="check">✓</span> Cloud Cost Optimization</li>
+                    <li><span class="check">✓</span> Infrastructure as Code</li>
+                    <li><span class="check">✓</span> DevOps & CI/CD Pipelines</li>
+                    <li><span class="check">✓</span> N8N Workflow Automation</li>
+                    <li><span class="check">✓</span> Flowise Integration</li>
+                </ul>
+            </div>
+            <div class="target-card">
+                <h4>🤖 AI & Machine Learning</h4>
+                <ul class="benefit-list">
+                    <li><span class="check">✓</span> Generative AI Integration</li>
+                    <li><span class="check">✓</span> Large Language Models (LLMs)</li>
+                    <li><span class="check">✓</span> ML Pipelines & MLOps</li>
+                    <li><span class="check">✓</span> AI Application Development</li>
+                    <li><span class="check">✓</span> Data Strategy & Analytics</li>
+                    <li><span class="check">✓</span> Responsible AI Consulting</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="section-title" style="margin: 2rem 0;">Alle Leistungen im Überblick</h3>
+
+        <div class="service-grid">
+            <div class="service-item">
+                <span class="service-icon">☁️</span>
+                <span>AWS Cloud Services</span>
+                <p class="service-benefit">Certified Cloud Practitioner für AWS Infrastructure, Security & Pricing</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">☁️</span>
+                <span>Microsoft Azure Services</span>
+                <p class="service-benefit">Azure Fundamentals & AI Fundamentals für Cloud & ML Solutions</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">☁️</span>
+                <span>Google Cloud Platform</span>
+                <p class="service-benefit">Digital Leader & GenAI Expert für Data, AI & Cloud Strategy</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">🧠</span>
+                <span>Generative AI</span>
+                <p class="service-benefit">LLM Integration, Prompt Engineering & AI Applications</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">📊</span>
+                <span>Data Analytics</span>
+                <p class="service-benefit">Data Strategy, Analytics & Cloud-basierte Datenlösungen</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">🔐</span>
+                <span>Cloud Security</span>
+                <p class="service-benefit">Security Compliance & Best Practices für alle Cloud Provider</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">🚀</span>
+                <span>Cloud Migration</span>
+                <p class="service-benefit">Strategische Cloud-Transformation & nahtlose Migration</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">⚙️</span>
+                <span>MLOps & Automation</span>
+                <p class="service-benefit">Machine Learning Operations & automatisierte Workflows</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">💡</span>
+                <span>AI Consulting</span>
+                <p class="service-benefit">Responsible AI & strategische Beratung für KI-Implementierung</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">🔧</span>
+                <span>DevOps & IaC</span>
+                <p class="service-benefit">Infrastructure as Code, CI/CD & moderne Deployment-Praktiken</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">⚙️</span>
+                <span>N8N Workflow Automation</span>
+                <p class="service-benefit">Open-Source Workflow-Automatisierung für effiziente Geschäftsprozesse</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">🔄</span>
+                <span>Flowise Integration</span>
+                <p class="service-benefit">Intelligente Workflow-Steuerung & nahtlose Systemintegrationen</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">📈</span>
+                <span>Digital Transformation</span>
+                <p class="service-benefit">Cloud-First Strategy & digitale Transformation Ihres Unternehmens</p>
+            </div>
+            <div class="service-item">
+                <span class="service-icon">🎯</span>
+                <span>Technical Consulting</span>
+                <p class="service-benefit">Architektur-Reviews, Best Practices & individuelle Lösungen</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-intro">
+            <h2>Warum Crowdcompany?</h2>
+            <p class="about-lead">Multi-Cloud AI Solutions – zertifiziert für AWS, Azure & Google Cloud.</p>
+            <p class="about-text-large">Die Erstellung intelligenter Systeme mittels Automation ermöglicht Ihnen, bessere Ergebnisse mit geringerem Einsatz zu erzielen. Da moderne und bezahlbare Technologien wie Cloud Computing und KI zur Verfügung stehen, messen wir Ihr Ergebnis, verändern Parameter und optimieren iterativ – bis das End-Ergebnis für Sie gut ist!</p>
+            <p class="about-text-large">Seit über 15 Jahren (seit 2011) bauen wir intelligente Systeme mit Automation. Als mein eigenes Geschäft durch AI beeinflusst wurde, habe ich mich auf AI fokussiert und biete jetzt Unternehmen moderne Cloud- und KI-Lösungen.</p>
+            <span class="regions-badge">Unsere Expertise für Ihren Erfolg</span>
+        </div>
+
+        <!-- 4 Säulen -->
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <span class="pillar-icon">☁️</span>
+                <h4>Multi-Cloud Expertise</h4>
+                <p>Zertifizierte Spezialisten für AWS, Azure & Google Cloud. Wir finden die richtige Cloud-Strategie für Ihre individuellen Anforderungen.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">🧠</span>
+                <h4>AI & Machine Learning</h4>
+                <p>Von Generative AI bis ML-Pipelines – wir implementieren KI-Lösungen, die echten Mehrwert für Ihr Unternehmen schaffen.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">⚡</span>
+                <h4>Moderne Technologien</h4>
+                <p>DevOps, N8N Workflow Automation, Flowise & Infrastructure as Code. Wir bauen skalierbare und wartbare Systeme.</p>
+            </div>
+            <div class="pillar-card">
+                <span class="pillar-icon">🔒</span>
+                <h4>Sicherheit & Compliance</h4>
+                <p>Security by Design für alle Cloud-Projekte. Wir sorgen für sichere und compliant Infrastrukturen.</p>
+            </div>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Cloud Zertifizierungen</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Jahre Erfahrung</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Cloud Provider</span>
+            </div>
+        </div>
+
+        <h3 class="about-subtitle">Über Raimund Bauer</h3>
+
+        <div class="team-grid">
+            <div class="team-card">
+                <h4 class="team-name">Raimund Bauer</h4>
+                <p class="team-role">Founder & Cloud & AI Specialist</p>
+                <p class="team-bio">Zertifiziert für AWS, Azure & Google Cloud. Spezialisiert auf Multi-Cloud Architekturen und KI-Integrationen. Über 15 Jahre Erfahrung in der Entwicklung intelligenter Systeme mit Automation.</p>
+                <a href="mailto:raimund.bauer@crowdcompany-ug.com" class="team-btn">E-Mail schreiben</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Server Setup CTA Section -->
+    <section id="ai-server" class="ai-cta-section">
+        <div>
+            <h2>Kostenloses AI Server Setup</h2>
+            <p>Ich richte Ihren persönlichen AI Server kostenlos ein, übernehme die Kosten für den ersten Monat und konfiguriere Ihre AI für Ihre geschäftlichen Bedürfnisse – wenn Sie ein kleines Unternehmen sind. Ich mache das für 20 kleine Unternehmen gleichzeitig.</p>
+            <a href="mailto:raimund.bauer@crowdcompany-ug.com?subject=AI Server Setup Anfrage" style="display: inline-block; background: white; color: #2d2d2d; padding: 18px 40px; font-size: 1.1rem; font-weight: 600; border-radius: 8px; text-decoration: none;">Jetzt AI Server anfordern</a>
+        </div>
+    </section>
+
+    <!-- Additional Services Section -->
+    <section id="additional-services" class="additional-services">
+        <div class="section-title">
+            <h3>Weitere Serviceleistungen</h3>
+            <p>Maßgeschneiderte Lösungen für Ihr Unternehmen</p>
+        </div>
+        <div class="additional-cards">
+            <div class="additional-card">
+                <h4>App-Entwicklung</h4>
+                <p>Moderne skalierbare Anwendungen, die auf jedem webfähigen Endgerät funktionieren. Von der Konzeption bis zum Launch – wir begleiten Sie durch den gesamten Entwicklungsprozess.</p>
+            </div>
+            <div class="additional-card">
+                <h4>SaaS-Entwicklung</h4>
+                <p>Entwicklung von Software-as-a-Service-Lösungen. Skalierbar, sicher und effizient – für wiederkehrende Einnahmen und zufriedene Kunden.</p>
+            </div>
+            <div class="additional-card">
+                <h4>Prozess-Automatisierung</h4>
+                <p>Mit N8N, Flowise und modernen Tools automatisieren wir Ihre Geschäftsprozesse. Intelligente Systeme für bessere Ergebnisse mit weniger Aufwand.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>Cloud Services</h4>
+                <ul>
+                    <li><a href="#services">AWS Solutions</a></li>
+                    <li><a href="#services">Azure Services</a></li>
+                    <li><a href="#services">Google Cloud</a></li>
+                    <li><a href="#services">Multi-Cloud Strategy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>AI & ML</h4>
+                <ul>
+                    <li><a href="#services">Generative AI</a></li>
+                    <li><a href="#services">Machine Learning</a></li>
+                    <li><a href="#services">Data Analytics</a></li>
+                    <li><a href="#services">AI Consulting</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Unternehmen</h4>
+                <ul>
+                    <li><a href="#ai-server">AI Server Setup</a></li>
+                    <li><a href="#additional-services">App-Entwicklung</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="mailto:raimund.bauer@crowdcompany-ug.com">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <img src="https://crowdcompany.s3.eu-west-1.amazonaws.com/corporate-identity/LogoRund.png" alt="Crowdcompany Logo" class="footer-logo">
+                <p style="font-weight: 600; font-size: 1rem; margin-bottom: 8px;">Crowdcompany UG</p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;">Cloud Solutions & AI Consulting</p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="tel:+4924862379991" style="color: inherit;">Telefon: +49 2486 2379991</a></p>
+                <p style="font-size: 0.9rem; margin: 0;"><a href="mailto:raimund.bauer@crowdcompany-ug.com" style="color: inherit;">E-Mail: raimund.bauer@crowdcompany-ug.com</a></p>
+            </div>
+        </div>
+        <div class="footer-legal">
+            <a href="https://s3.eu-central-1.amazonaws.com/crowdcompany-impressum/IMPRESSUM.html" target="_blank" id="footer-impressum-link">Impressum</a>
+            <a href="https://s3.eu-central-1.amazonaws.com/crowdcompany-impressum/DATENSCHUTZERKLAERUNG-PRIVACYPOLICY.html" target="_blank" id="footer-privacy-link">Datenschutz</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Crowdcompany UG. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Language detection for legal links
+    (function() {
+        const browserLang = (navigator.language || navigator.userLanguage || 'de').split('-')[0].toLowerCase();
+        const isEnglish = browserLang === 'en';
+        document.getElementById('footer-impressum-link').textContent = isEnglish ? 'Imprint' : 'Impressum';
+        document.getElementById('footer-privacy-link').textContent = isEnglish ? 'Privacy Policy' : 'Datenschutz';
+    })();
+    </script>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav');
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                nav.classList.toggle('active');
+                mobileMenuBtn.textContent = nav.classList.contains('active') ? '✕' : '☰';
+            });
+        }
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    if (nav) {
+                        nav.classList.remove('active');
+                        if (mobileMenuBtn) {
+                            mobileMenuBtn.textContent = '☰';
+                        }
+                    }
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (header) {
+                if (window.scrollY > 100) {
+                    header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+                } else {
+                    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                }
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.property-card, .team-card, .service-item, .pillar-card, .additional-card').forEach((el, index) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            observer.observe(el);
+        });
+    </script>
+    <script src="https://crowdcompany.info/certifications-widget.js"></script>
+</body>
+</html>
