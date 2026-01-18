@@ -43,6 +43,7 @@ Die Website crowdcompany.info ist produktiv mit vollständigem Bilingual-Support
 - "Unsere Expertise für Ihren Erfolg" Badge übersetzbar
 - 4 Pillar-Cards (Multi-Cloud, AI/ML, Moderne Technologien, Sicherheit)
 - Stats-Row (5+ Zertifizierungen, 15+ Jahre, 3 Cloud Provider)
+- Team-Card mit Name, Rolle und Bio (übersetzbar)
 
 **Additional Services**
 - "Weitere Serviceleistungen" übersetzbar
@@ -62,6 +63,11 @@ Die Website crowdcompany.info ist produktiv mit vollständigem Bilingual-Support
 - Telefon und E-Mail Links
 - Impressum und Datenschutz Links (übersetzbar)
 - Copyright Text (übersetzbar)
+
+**Animationen**
+- Smooth Scroll-Animationen mit 0.3s Übergangszeit
+- Intersection Observer für Scroll-Animationen
+- `rootMargin: '0px 0px 100px 0px'`
 
 ### Technologie-Stack
 
@@ -116,10 +122,14 @@ Insgesamt über 70 Übersetzungsschlüssel für:
 - Credentials Title/Subtitle
 - Footer Links (Impressum, Datenschutz)
 
+### Zuletzt aktualisiert
+
+18. Januar 2026 - Animationen optimiert (0.5s → 0.3s), About-Subtitle entfernt für schlankeres Design
+
 ### Offene Punkte
 
-Keine - Website ist produktiv einsatzbereit mit vollständigem Bilingual-Support.
+- Blog-Sektion geplant (separate Seiten für Artikel)
 
 ### Nächstes Milestone
 
-Wird bei neuen Anforderungen definiert.
+Blog-Sektion mit separaten Artikelseiten

@@ -700,14 +700,6 @@
             letter-spacing: 1px;
         }
 
-        .about-subtitle {
-            font-size: 24px;
-            color: #1a1a1a;
-            text-align: center;
-            margin: calc(var(--pico-spacing) * 4) 0;
-            font-weight: 600;
-        }
-
         /* Mobile responsive */
         @media (max-width: 767px) {
             .hero-section {
@@ -920,7 +912,6 @@
             'pillar-3-desc': 'DevOps, N8N Workflow Automation, Flowise & Infrastructure as Code. Wir bauen skalierbare und wartbare Systeme.',
             'pillar-4-title': 'Sicherheit & Compliance',
             'pillar-4-desc': 'Security by Design für alle Cloud-Projekte. Wir sorgen für sichere und compliant Infrastrukturen.',
-            'about-subtitle': 'Über Raimund Bauer',
             'team-name': 'Raimund Bauer',
             'team-role': 'Founder & Cloud & AI Specialist',
             'team-bio': 'Zertifiziert für AWS, Azure & Google Cloud. Spezialisiert auf Multi-Cloud Architekturen und KI-Integrationen. Über 15 Jahre Erfahrung in der Entwicklung intelligenter Systeme mit Automation.',
@@ -963,7 +954,6 @@
             'pillar-3-desc': 'DevOps, N8N Workflow Automation, Flowise & Infrastructure as Code. We build scalable and maintainable systems.',
             'pillar-4-title': 'Security & Compliance',
             'pillar-4-desc': 'Security by Design for all cloud projects. We ensure secure and compliant infrastructures.',
-            'about-subtitle': 'About Raimund Bauer',
             'team-name': 'Raimund Bauer',
             'team-role': 'Founder & Cloud & AI Specialist',
             'team-bio': 'Certified in AWS, Azure & Google Cloud. Specialized in Multi-Cloud architectures and AI integrations. Over 15 years of experience in developing intelligent systems with automation.',
@@ -1054,7 +1044,6 @@
         const aboutText1 = document.getElementById('about-text-1');
         const aboutText2 = document.getElementById('about-text-2');
         const regionsBadge = document.getElementById('regions-badge');
-        const aboutSubtitle = document.querySelector('.about-subtitle');
         const teamName = document.querySelector('.team-name');
         const teamRole = document.querySelector('.team-role');
         const teamBio = document.querySelector('.team-bio');
@@ -1087,7 +1076,6 @@
             if (cardTitle) cardTitle.textContent = pageData[`additional-card-${i}-title`];
             if (cardDesc) cardDesc.textContent = pageData[`additional-card-${i}-desc`];
         }
-        if (aboutSubtitle) aboutSubtitle.textContent = pageData['about-subtitle'];
         if (teamName) teamName.textContent = pageData['team-name'];
         if (teamRole) teamRole.textContent = pageData['team-role'];
         if (teamBio) teamBio.textContent = pageData['team-bio'];
@@ -1325,8 +1313,6 @@
             </div>
         </div>
 
-        <h3 class="about-subtitle">Über Raimund Bauer</h3>
-
         <div class="team-grid">
             <div class="team-card">
                 <h4 class="team-name">Raimund Bauer</h4>
@@ -1478,7 +1464,7 @@
         // Animate elements on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px 100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1493,7 +1479,7 @@
         document.querySelectorAll('.property-card, .team-card, .service-item, .pillar-card, .additional-card').forEach((el, index) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
-            el.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            el.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
             observer.observe(el);
         });
     </script>
