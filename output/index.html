@@ -810,18 +810,20 @@
             title: 'Verifizierte Zertifizierungen',
             subtitle: 'Alle Zertifikate durch Klick verifizierbar',
             certs: [
-                { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', desc: 'Cloud-Konzepte, Security, Pricing' },
-                { name: 'Microsoft Azure Fundamentals (AZ-900)', issuer: 'Microsoft', desc: 'Core Azure Services, Security, Compliance' },
-                { name: 'Microsoft Azure AI Fundamentals (AI-900)', issuer: 'Microsoft', desc: 'Machine Learning, AI Services, Responsible AI' },
-                { name: 'Google Cloud Digital Leader', issuer: 'Google Cloud', desc: 'Cloud-Transformation, Data & AI Strategy' },
-                { name: 'Google Generative AI Leader', issuer: 'Google Cloud', desc: 'GenAI Applications, LLMs, AI Ethics' }
+                { name: 'AWS Certified Cloud AI Practitioner', issuer: 'Amazon Web Services', desc: 'Grundlagen der Cloud-KI, KI-Workloads und AWS-KI-Services' },
+                { name: 'AWS Certified Cloud Practitioner (CLF-C01)', issuer: 'Amazon Web Services', desc: 'Cloud-Konzepte, Sicherheit und Preisgestaltung' },
+                { name: 'Microsoft Azure Fundamentals (AZ-900)', issuer: 'Microsoft', desc: 'Azure-Grundlagen, Sicherheit und Compliance' },
+                { name: 'Microsoft Azure AI Fundamentals (AI-900)', issuer: 'Microsoft', desc: 'Machine Learning, KI-Dienste, Responsible AI' },
+                { name: 'Google Cloud Digital Leader', issuer: 'Google Cloud', desc: 'Cloud-Transformation, Daten und KI-Strategie' },
+                { name: 'Google Generative AI Leader', issuer: 'Google Cloud', desc: 'Generative KI-Anwendungen, LLMs, KI-Ethik' }
             ]
         },
         en: {
             title: 'Verified Certifications',
             subtitle: 'All certificates verifiable by clicking',
             certs: [
-                { name: 'AWS Certified Cloud Practitioner', issuer: 'Amazon Web Services', desc: 'Cloud concepts, Security, Pricing' },
+                { name: 'AWS Certified Cloud AI Practitioner', issuer: 'Amazon Web Services', desc: 'Foundation of cloud AI, AI workloads, and AWS AI services' },
+                { name: 'AWS Certified Cloud Practitioner (CLF-C01)', issuer: 'Amazon Web Services', desc: 'Cloud concepts, security, and pricing' },
                 { name: 'Microsoft Azure Fundamentals (AZ-900)', issuer: 'Microsoft', desc: 'Core Azure Services, Security, Compliance' },
                 { name: 'Microsoft Azure AI Fundamentals (AI-900)', issuer: 'Microsoft', desc: 'ML, AI Services, Responsible AI' },
                 { name: 'Google Cloud Digital Leader', issuer: 'Google Cloud', desc: 'Cloud Transformation, Data & AI Strategy' },
@@ -835,6 +837,7 @@
         const data = credentialsData[browserLang] || credentialsData.de;
 
         const badges = [
+            { color: '#FF9900', url: 'https://www.credly.com/badges/976fc6cb-4647-497d-8943-7f855604aa93/public_url' },
             { color: '#FF9900', url: 'https://www.credly.com/badges/06c1a0fb-ec0c-4f9a-9b98-491064ba863f/public_url' },
             { color: '#0078D4', url: 'https://learn.microsoft.com/api/credentials/share/de-de/RaimundBauer-9096/E433F4ED798678ED?sharingId=DD0D50C6C2600A10' },
             { color: '#0078D4', url: 'https://learn.microsoft.com/api/credentials/share/de-de/RaimundBauer-9096/85393A84D699698D?sharingId=DD0D50C6C2600A10' },
@@ -846,21 +849,20 @@
 
         data.certs.forEach((cert, index) => {
             const badge = badges[index];
-            const imgUrl = index === 0 ? 'https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png' :
-                          index < 3 ? 'https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg' :
-                          index === 3 ? 'https://images.credly.com/size/340x340/images/44994cda-b5b0-44cb-9a6d-d29b57163073/image.png' :
+            const imgUrl = index === 0 ? 'https://images.credly.com/size/340x340/images/4d4693bb-530e-4bca-9327-de07f3aa2348/image.png' :
+                          index === 1 ? 'https://images.credly.com/size/340x340/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png' :
+                          index < 4 ? 'https://learn.microsoft.com/media/learn/certification/badges/microsoft-certified-fundamentals-badge.svg' :
+                          index === 4 ? 'https://images.credly.com/size/340x340/images/44994cda-b5b0-44cb-9a6d-d29b57163073/image.png' :
                           'https://images.credly.com/size/680x680/images/ec23e41a-0f32-4a98-9c00-28925621b281/blob';
             html += `
-                <div class="credential-card" style="border-left-color: ${badge.color};">
-                    <a href="${badge.url}" target="_blank" rel="noopener noreferrer">
-                        <img src="${imgUrl}" alt="${cert.name}">
-                    </a>
+                <a href="${badge.url}" target="_blank" rel="noopener noreferrer" class="credential-card" style="border-left-color: ${badge.color}; text-decoration: none; color: inherit; display: flex; align-items: center; gap: 1rem; background: #f5f5f5; padding: 1rem 1.5rem; border-radius: 8px; border-left: 4px solid; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <img src="${imgUrl}" alt="${cert.name}" style="width: 60px; height: 60px; object-fit: contain; flex-shrink: 0;">
                     <div>
-                        <strong>${cert.name}</strong>
-                        <span>${cert.issuer}</span>
-                        <span>${cert.desc}</span>
+                        <strong style="display: block; font-size: 0.95rem; color: #1a1a1a; margin-bottom: 0.2rem;">${cert.name}</strong>
+                        <span style="font-size: 0.8rem; color: #555555;">${cert.issuer}</span>
+                        <span style="font-size: 0.8rem; color: #555555; font-style: italic; display: block; margin-top: 0.2rem;">${cert.desc}</span>
                     </div>
-                </div>
+                </a>
             `;
         });
 
