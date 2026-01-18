@@ -193,6 +193,36 @@
             color: #1a1a1a;
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 20px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: 1px solid #2d2d2d;
+            color: #1a1a1a;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background-color: #2d2d2d;
+            color: white;
+        }
+
+        .lang-btn.active {
+            background-color: #2d2d2d;
+            color: white;
+        }
+
         /* Section spacing */
         section {
             padding: calc(var(--pico-spacing) * 5) var(--pico-spacing);
@@ -498,6 +528,29 @@
             line-height: 1.7;
         }
 
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            background-color: transparent;
+            color: #dc3545;
+            border: 2px solid #dc3545;
+            padding: 12px 28px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: #dc3545;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+        }
+
         /* Footer */
         footer {
             background-color: #2d2d2d;
@@ -531,7 +584,7 @@
         }
 
         .footer-section a {
-            color: rgba(255,255,255,0.8);
+            color: #ffffff;
             font-size: 14px;
         }
 
@@ -551,7 +604,7 @@
         }
 
         .footer-legal a {
-            color: rgba(255,255,255,0.8);
+            color: #ffffff;
             font-size: 14px;
             text-decoration: none;
         }
@@ -780,6 +833,11 @@
                         <li><a href="#contact">Kontakt</a></li>
                     </ul>
                 </nav>
+                <div class="lang-switcher">
+                    <button class="lang-btn" data-lang="de">DE</button>
+                    <span style="color: #1a1a1a; margin: 0 4px;">/</span>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
             </div>
         </div>
     </header>
@@ -798,10 +856,13 @@
     <!-- Credentials Section -->
     <section id="credentials" class="credential-section">
         <div class="section-title">
-            <h2>Verifizierte Zertifizierungen</h2>
-            <p>Alle Zertifikate durch Klick verifizierbar</p>
+            <h2 id="credentials-title">Verifizierte Zertifizierungen</h2>
+            <p id="credentials-subtitle">Alle Zertifikate durch Klick verifizierbar</p>
         </div>
         <div id="credentials-content"></div>
+        <div style="text-align: center; margin-top: calc(var(--pico-spacing) * 3);">
+            <a href="mailto:raimund.bauer@crowdcompany-ug.com?subject=Zertifizierungs-Anfrage" class="cta-button" id="cta-credentials">Details anfragen</a>
+        </div>
     </section>
 
     <script>
@@ -874,6 +935,225 @@
         document.addEventListener('DOMContentLoaded', initCredentials);
     } else {
         initCredentials();
+    }
+
+    // CTA Buttons - zweisprachig
+    const ctaButtonsData = {
+        de: {
+            'cta-credentials': 'Details anfragen',
+            'cta-services': 'Cloud & AI Services anfragen',
+            'cta-about': 'Zusammenarbeit besprechen',
+            'cta-ai-server': 'Jetzt AI Server anfordern',
+            'cta-additional': 'Projekt besprechen'
+        },
+        en: {
+            'cta-credentials': 'Request Details',
+            'cta-services': 'Request Cloud & AI Services',
+            'cta-about': 'Discuss Collaboration',
+            'cta-ai-server': 'Request AI Server Now',
+            'cta-additional': 'Discuss Project'
+        }
+    };
+
+    // Page Content - zweisprachig
+    const pageContentData = {
+        de: {
+            'services-title': 'Unsere KI & Cloud Services',
+            'services-subtitle': 'Multi-Cloud Expertise für Ihr Unternehmen',
+            'target-cloud-title': '☁️ Cloud Solutions',
+            'target-ai-title': '🤖 AI & Machine Learning',
+            'all-services-title': 'Alle Leistungen im Überblick',
+            'about-title': 'Warum Crowdcompany?',
+            'about-lead': 'Multi-Cloud AI Solutions – zertifiziert für AWS, Azure & Google Cloud.',
+            'about-subtitle': 'Über Raimund Bauer',
+            'team-name': 'Raimund Bauer',
+            'team-role': 'Founder & Cloud & AI Specialist',
+            'team-bio': 'Zertifiziert für AWS, Azure & Google Cloud. Spezialisiert auf Multi-Cloud Architekturen und KI-Integrationen. Über 15 Jahre Erfahrung in der Entwicklung intelligenter Systeme mit Automation.',
+            'team-btn': 'E-Mail schreiben',
+            'ai-server-title': 'Kostenloses AI Server Setup',
+            'ai-server-desc': 'Ich richte Ihren persönlichen AI Server kostenlos ein, übernehme die Kosten für den ersten Monat und konfiguriere Ihre AI für Ihre geschäftlichen Bedürfnisse – wenn Sie ein kleines Unternehmen sind. Ich mache das für 20 kleine Unternehmen gleichzeitig.',
+            'ai-server-btn': 'Jetzt AI Server anfordern',
+            'additional-title': 'Weitere Serviceleistungen',
+            'additional-subtitle': 'Maßgeschneiderte Lösungen für Ihr Unternehmen',
+            'nav-services': 'Services',
+            'nav-credentials': 'Zertifizierungen',
+            'nav-ai-server': 'AI Server Setup',
+            'nav-about': 'Über uns',
+            'nav-contact': 'Kontakt',
+            'credentials-title': 'Verifizierte Zertifizierungen',
+            'credentials-subtitle': 'Alle Zertifikate durch Klick verifizierbar'
+        },
+        en: {
+            'services-title': 'Our AI & Cloud Services',
+            'services-subtitle': 'Multi-Cloud Expertise for your business',
+            'target-cloud-title': '☁️ Cloud Solutions',
+            'target-ai-title': '🤖 AI & Machine Learning',
+            'all-services-title': 'All Services at a Glance',
+            'about-title': 'Why Crowdcompany?',
+            'about-lead': 'Multi-Cloud AI Solutions – certified in AWS, Azure & Google Cloud.',
+            'about-subtitle': 'About Raimund Bauer',
+            'team-name': 'Raimund Bauer',
+            'team-role': 'Founder & Cloud & AI Specialist',
+            'team-bio': 'Certified in AWS, Azure & Google Cloud. Specialized in Multi-Cloud architectures and AI integrations. Over 15 years of experience in developing intelligent systems with automation.',
+            'team-btn': 'Send Email',
+            'ai-server-title': 'Free AI Server Setup',
+            'ai-server-desc': 'I will set up your personal AI Server for free, cover the costs for the first month and configure your AI for your business needs – if you are a small business. I am doing this for 20 small businesses simultaneously.',
+            'ai-server-btn': 'Request AI Server Now',
+            'additional-title': 'Additional Services',
+            'additional-subtitle': 'Tailored solutions for your business',
+            'nav-services': 'Services',
+            'nav-credentials': 'Certifications',
+            'nav-ai-server': 'AI Server Setup',
+            'nav-about': 'About',
+            'nav-contact': 'Contact',
+            'credentials-title': 'Verified Certifications',
+            'credentials-subtitle': 'All certificates verifiable by clicking'
+        }
+    };
+
+    function initCtaButtons() {
+        const browserLang = (navigator.language || navigator.userLanguage || 'de').split('-')[0].toLowerCase();
+        const data = ctaButtonsData[browserLang] || ctaButtonsData.de;
+
+        Object.keys(data).forEach(buttonId => {
+            const button = document.getElementById(buttonId);
+            if (button) {
+                button.textContent = data[buttonId];
+            }
+        });
+    }
+
+    // Language Switcher
+    let currentLang = (navigator.language || navigator.userLanguage || 'de').split('-')[0].toLowerCase();
+    if (currentLang !== 'de' && currentLang !== 'en') {
+        currentLang = 'de';
+    }
+
+    function setLanguage(lang) {
+        currentLang = lang;
+
+        // Update credentials
+        initCredentials();
+
+        // Update Credentials title and subtitle
+        const credentialsTitle = document.getElementById('credentials-title');
+        const credentialsSubtitle = document.getElementById('credentials-subtitle');
+        if (credentialsTitle) credentialsTitle.textContent = pageContentData[lang]['credentials-title'];
+        if (credentialsSubtitle) credentialsSubtitle.textContent = pageContentData[lang]['credentials-subtitle'];
+
+        // Update CTA buttons
+        const ctaData = ctaButtonsData[lang];
+        Object.keys(ctaData).forEach(buttonId => {
+            const button = document.getElementById(buttonId);
+            if (button) {
+                button.textContent = ctaData[buttonId];
+            }
+        });
+
+        // Update page content
+        const pageData = pageContentData[lang];
+
+        // Update Services section
+        const servicesTitle = document.querySelector('.section-title h3');
+        const servicesSubtitle = document.querySelector('.section-title p');
+        if (servicesTitle) servicesTitle.textContent = pageData['services-title'];
+        if (servicesSubtitle) servicesSubtitle.textContent = pageData['services-subtitle'];
+
+        // Update Target card titles
+        const targetCards = document.querySelectorAll('.target-card h4');
+        if (targetCards.length >= 2) {
+            targetCards[0].textContent = pageData['target-cloud-title'];
+            targetCards[1].textContent = pageData['target-ai-title'];
+        }
+
+        // Update "Alle Leistungen im Überblick"
+        const allServicesTitle = document.querySelector('.section-title[style*="margin: 2rem 0"] h3');
+        if (allServicesTitle) allServicesTitle.textContent = pageData['all-services-title'];
+
+        // Update About section
+        const aboutTitle = document.querySelector('.about-intro h2');
+        const aboutLead = document.querySelector('.about-lead');
+        const aboutSubtitle = document.querySelector('.about-subtitle');
+        const teamName = document.querySelector('.team-name');
+        const teamRole = document.querySelector('.team-role');
+        const teamBio = document.querySelector('.team-bio');
+        const teamBtn = document.querySelector('.team-btn');
+
+        if (aboutTitle) aboutTitle.textContent = pageData['about-title'];
+        if (aboutLead) aboutLead.textContent = pageData['about-lead'];
+        if (aboutSubtitle) aboutSubtitle.textContent = pageData['about-subtitle'];
+        if (teamName) teamName.textContent = pageData['team-name'];
+        if (teamRole) teamRole.textContent = pageData['team-role'];
+        if (teamBio) teamBio.textContent = pageData['team-bio'];
+        if (teamBtn) teamBtn.textContent = pageData['team-btn'];
+
+        // Update AI Server section
+        const aiServerTitle = document.querySelector('#ai-server h2');
+        const aiServerDesc = document.querySelector('#ai-server p');
+        const aiServerBtn = document.getElementById('cta-ai-server');
+        if (aiServerTitle) aiServerTitle.textContent = pageData['ai-server-title'];
+        if (aiServerDesc) aiServerDesc.textContent = pageData['ai-server-desc'];
+        if (aiServerBtn) aiServerBtn.textContent = pageData['ai-server-btn'];
+
+        // Update Additional Services section
+        const additionalTitle = document.querySelector('#additional-services .section-title h3');
+        const additionalSubtitle = document.querySelector('#additional-services .section-title p');
+        if (additionalTitle) additionalTitle.textContent = pageData['additional-title'];
+        if (additionalSubtitle) additionalSubtitle.textContent = pageData['additional-subtitle'];
+
+        // Update Navigation links
+        const navLinks = document.querySelectorAll('nav a');
+        if (navLinks.length >= 5) {
+            navLinks[0].textContent = pageData['nav-services'];
+            navLinks[1].textContent = pageData['nav-credentials'];
+            navLinks[2].textContent = pageData['nav-ai-server'];
+            navLinks[3].textContent = pageData['nav-about'];
+            navLinks[4].textContent = pageData['nav-contact'];
+        }
+
+        // Update legal links
+        const impressumLink = document.getElementById('footer-impressum-link');
+        const privacyLink = document.getElementById('footer-privacy-link');
+        if (impressumLink && privacyLink) {
+            if (lang === 'en') {
+                impressumLink.textContent = 'Imprint';
+                privacyLink.textContent = 'Privacy Policy';
+            } else {
+                impressumLink.textContent = 'Impressum';
+                privacyLink.textContent = 'Datenschutz';
+            }
+        }
+
+        // Update active button state
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.lang === lang) {
+                btn.classList.add('active');
+            }
+        });
+    }
+
+    function initLanguageSwitcher() {
+        // Set initial active state
+        setLanguage(currentLang);
+
+        // Add click handlers to language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.dataset.lang;
+                setLanguage(lang);
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            initCtaButtons();
+            initLanguageSwitcher();
+        });
+    } else {
+        initCtaButtons();
+        initLanguageSwitcher();
     }
     </script>
 
@@ -991,6 +1271,9 @@
                 <p class="service-benefit">Sichere und skalierbare Cloud-Umgebungen für Unternehmen</p>
             </div>
         </div>
+        <div style="text-align: center; margin-top: calc(var(--pico-spacing) * 4);">
+            <a href="mailto:raimund.bauer@crowdcompany-ug.com?subject=Services-Anfrage" class="cta-button" id="cta-services">Cloud & AI Services anfragen</a>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -1052,6 +1335,9 @@
                 <a href="mailto:raimund.bauer@crowdcompany-ug.com" class="team-btn">E-Mail schreiben</a>
             </div>
         </div>
+        <div style="text-align: center; margin-top: calc(var(--pico-spacing) * 4);">
+            <a href="mailto:raimund.bauer@crowdcompany-ug.com?subject=Kooperations-Anfrage" class="cta-button" id="cta-about">Zusammenarbeit besprechen</a>
+        </div>
     </section>
 
     <!-- AI Server Setup CTA Section -->
@@ -1059,7 +1345,7 @@
         <div>
             <h2>Kostenloses AI Server Setup</h2>
             <p>Ich richte Ihren persönlichen AI Server kostenlos ein, übernehme die Kosten für den ersten Monat und konfiguriere Ihre AI für Ihre geschäftlichen Bedürfnisse – wenn Sie ein kleines Unternehmen sind. Ich mache das für 20 kleine Unternehmen gleichzeitig.</p>
-            <a href="mailto:raimund.bauer@crowdcompany-ug.com?subject=AI Server Setup Anfrage" style="display: inline-block; background: white; color: #2d2d2d; padding: 18px 40px; font-size: 1.1rem; font-weight: 600; border-radius: 8px; text-decoration: none;">Jetzt AI Server anfordern</a>
+            <a href="mailto:raimund.bauer@crowdcompany-ug.com?subject=AI Server Setup Anfrage" class="cta-button" id="cta-ai-server" style="background-color: transparent; color: #dc3545; border-color: #dc3545;">Jetzt AI Server anfordern</a>
         </div>
     </section>
 
@@ -1082,6 +1368,9 @@
                 <h4>Prozess-Automatisierung</h4>
                 <p>Mit N8N, Flowise und modernen Tools automatisieren wir Ihre Geschäftsprozesse. Intelligente Systeme für bessere Ergebnisse mit weniger Aufwand.</p>
             </div>
+        </div>
+        <div style="text-align: center; margin-top: calc(var(--pico-spacing) * 4);">
+            <a href="mailto:raimund.bauer@crowdcompany-ug.com?subject=Projekt-Anfrage" class="cta-button" id="cta-additional">Projekt besprechen</a>
         </div>
     </section>
 
