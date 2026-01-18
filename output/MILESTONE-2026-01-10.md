@@ -62,7 +62,7 @@ Die Website crowdcompany.info ist produktiv und vollständig funktionsfähig.
 
 - `index.html` - Hauptseite
 - `index_old.html` - Vorherige Version
-- `PremiumBusinessAutomation.png` - Hero-Hintergrundbild
+- `Header20260117-1600px.jpg` - Hero-Hintergrundbild (S3: mqlstreaming/corporate-identity)
 - `certifications-widget.js` - Zertifizierungs-Widget (im Root)
 
 ### Deployment
