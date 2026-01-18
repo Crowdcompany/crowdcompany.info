@@ -31,14 +31,17 @@
         body {
             background-color: #f5f5f5;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            margin: 0;
+            padding: 0;
         }
 
         /* Custom Hero mit Hintergrundbild */
         .hero-section {
             position: relative;
             width: 100%;
-            padding: 180px 0 0 0;
+            padding: 0;
             margin: 0;
+            margin-top: 180px;
             color: white;
             box-sizing: border-box;
         }
@@ -49,51 +52,6 @@
             display: block;
             margin: 0;
             padding: 0;
-        }
-
-        .hero-tagline {
-            font-size: 1.8rem;
-            color: white;
-            background: rgba(26, 54, 93, 0.85);
-            padding: 20px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            max-width: 100%;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-
-        .hero-play-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .hero-play-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-
-        .hero-play-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-            margin-left: 3px;
         }
 
         /* Navigation aus index_old.html */
@@ -182,6 +140,15 @@
 
         nav a:hover {
             color: #2d2d2d;
+        }
+
+        nav a[href="#contact"] {
+            color: #dc3545;
+            font-weight: 600;
+        }
+
+        nav a[href="#contact"]:hover {
+            color: #c82333;
         }
 
         .mobile-menu-btn {
@@ -744,24 +711,7 @@
         /* Mobile responsive */
         @media (max-width: 767px) {
             .hero-section {
-                min-height: 80vh;
-            }
-
-            .hero-tagline {
-                font-size: 1.2rem;
-                padding: 15px 20px;
-                gap: 10px;
-            }
-
-            .hero-play-btn {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-
-            .hero-play-btn svg {
-                width: 16px;
-                height: 16px;
+                margin-top: 160px;
             }
 
             .target-grid,
@@ -845,12 +795,6 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <img src="https://d8wyob5mxqc1u.cloudfront.net/corporate-identity/Header20260117-1600px.jpg" alt="Multi-Cloud AI Solutions Header" class="hero-image">
-        <p class="hero-tagline">
-            <a href="https://www.youtube.com/@premiumbusinessautomation/videos" target="_blank" rel="noopener noreferrer" class="hero-play-btn" aria-label="Videos auf YouTube ansehen">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </a>
-            AWS, Azure & Google Cloud certified
-        </p>
     </section>
 
     <!-- Credentials Section -->
@@ -961,7 +905,7 @@
             'services-title': 'Unsere KI & Cloud Services',
             'services-subtitle': 'Multi-Cloud Expertise für Ihr Unternehmen',
             'target-cloud-title': '☁️ Cloud Solutions',
-            'target-ai-title': '🤖 AI & Machine Learning',
+            'target-ai-title': '🧠 AI & Machine Learning',
             'all-services-title': 'Alle Leistungen im Überblick',
             'about-title': 'Warum Crowdcompany?',
             'about-lead': 'Multi-Cloud AI Solutions – zertifiziert für AWS, Azure & Google Cloud.',
@@ -1004,7 +948,7 @@
             'services-title': 'Our AI & Cloud Services',
             'services-subtitle': 'Multi-Cloud Expertise for your business',
             'target-cloud-title': '☁️ Cloud Solutions',
-            'target-ai-title': '🤖 AI & Machine Learning',
+            'target-ai-title': '🧠 AI & Machine Learning',
             'all-services-title': 'All Services at a Glance',
             'about-title': 'Why Crowdcompany?',
             'about-lead': 'Multi-Cloud AI Solutions – certified in AWS, Azure & Google Cloud.',
@@ -1236,7 +1180,7 @@
                 </ul>
             </div>
             <div class="target-card">
-                <h4>🤖 AI & Machine Learning</h4>
+                <h4>🧠 AI & Machine Learning</h4>
                 <ul class="benefit-list">
                     <li><span class="check">✓</span> Generative AI Integration</li>
                     <li><span class="check">✓</span> Large Language Models (LLMs)</li>
