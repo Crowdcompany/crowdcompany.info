@@ -928,6 +928,7 @@
             'additional-card-2-desc': 'Entwicklung von Software-as-a-Service-Lösungen. Skalierbar, sicher und effizient – für wiederkehrende Einnahmen und zufriedene Kunden.',
             'additional-card-3-title': 'Prozess-Automatisierung',
             'additional-card-3-desc': 'Mit N8N, Flowise und modernen Tools automatisieren wir Ihre Geschäftsprozesse. Intelligente Systeme für bessere Ergebnisse mit weniger Aufwand.',
+            'nav-blog': 'Blog',
             'nav-services': 'Services',
             'nav-credentials': 'Zertifizierungen',
             'nav-ai-server': 'AI Server Setup',
@@ -970,6 +971,7 @@
             'additional-card-2-desc': 'Development of Software-as-a-Service solutions. Scalable, secure and efficient – for recurring revenue and satisfied customers.',
             'additional-card-3-title': 'Process Automation',
             'additional-card-3-desc': 'With N8N, Flowise and modern tools we automate your business processes. Intelligent systems for better results with less effort.',
+            'nav-blog': 'Blog',
             'nav-services': 'Services',
             'nav-credentials': 'Certifications',
             'nav-ai-server': 'AI Server Setup',
@@ -1092,12 +1094,13 @@
 
         // Update Navigation links
         const navLinks = document.querySelectorAll('nav a');
-        if (navLinks.length >= 5) {
-            navLinks[0].textContent = pageData['nav-services'];
-            navLinks[1].textContent = pageData['nav-credentials'];
-            navLinks[2].textContent = pageData['nav-ai-server'];
-            navLinks[3].textContent = pageData['nav-about'];
-            navLinks[4].textContent = pageData['nav-contact'];
+        if (navLinks.length >= 6) {
+            navLinks[0].textContent = pageData['nav-blog'];
+            navLinks[1].textContent = pageData['nav-services'];
+            navLinks[2].textContent = pageData['nav-credentials'];
+            navLinks[3].textContent = pageData['nav-ai-server'];
+            navLinks[4].textContent = pageData['nav-about'];
+            navLinks[5].textContent = pageData['nav-contact'];
         }
 
         // Update legal links
