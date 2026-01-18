@@ -965,6 +965,17 @@
             'all-services-title': 'Alle Leistungen im Überblick',
             'about-title': 'Warum Crowdcompany?',
             'about-lead': 'Multi-Cloud AI Solutions – zertifiziert für AWS, Azure & Google Cloud.',
+            'about-text-1': 'Die Erstellung intelligenter Systeme mittels Automation ermöglicht Ihnen, bessere Ergebnisse mit geringerem Einsatz zu erzielen. Da moderne und bezahlbare Technologien wie Cloud Computing und KI zur Verfügung stehen, messen wir Ihr Ergebnis, verändern Parameter und optimieren iterativ – bis das End-Ergebnis für Sie gut ist!',
+            'about-text-2': 'Seit über 15 Jahren (seit 2011) bauen wir intelligente Systeme mit Automation. Als mein eigenes Geschäft durch AI beeinflusst wurde, habe ich mich auf AI fokussiert und biete jetzt Unternehmen moderne Cloud- und KI-Lösungen.',
+            'regions-badge': 'Unsere Expertise für Ihren Erfolg',
+            'pillar-1-title': 'Multi-Cloud Expertise',
+            'pillar-1-desc': 'Zertifizierte Spezialisten für AWS, Azure & Google Cloud. Wir finden die richtige Cloud-Strategie für Ihre individuellen Anforderungen.',
+            'pillar-2-title': 'AI & Machine Learning',
+            'pillar-2-desc': 'Von Generative AI bis ML-Pipelines – wir implementieren KI-Lösungen, die echten Mehrwert für Ihr Unternehmen schaffen.',
+            'pillar-3-title': 'Moderne Technologien',
+            'pillar-3-desc': 'DevOps, N8N Workflow Automation, Flowise & Infrastructure as Code. Wir bauen skalierbare und wartbare Systeme.',
+            'pillar-4-title': 'Sicherheit & Compliance',
+            'pillar-4-desc': 'Security by Design für alle Cloud-Projekte. Wir sorgen für sichere und compliant Infrastrukturen.',
             'about-subtitle': 'Über Raimund Bauer',
             'team-name': 'Raimund Bauer',
             'team-role': 'Founder & Cloud & AI Specialist',
@@ -975,6 +986,12 @@
             'ai-server-btn': 'Jetzt AI Server anfordern',
             'additional-title': 'Weitere Serviceleistungen',
             'additional-subtitle': 'Maßgeschneiderte Lösungen für Ihr Unternehmen',
+            'additional-card-1-title': 'App-Entwicklung',
+            'additional-card-1-desc': 'Moderne skalierbare Anwendungen, die auf jedem webfähigen Endgerät funktionieren. Von der Konzeption bis zum Launch – wir begleiten Sie durch den gesamten Entwicklungsprozess.',
+            'additional-card-2-title': 'SaaS-Entwicklung',
+            'additional-card-2-desc': 'Entwicklung von Software-as-a-Service-Lösungen. Skalierbar, sicher und effizient – für wiederkehrende Einnahmen und zufriedene Kunden.',
+            'additional-card-3-title': 'Prozess-Automatisierung',
+            'additional-card-3-desc': 'Mit N8N, Flowise und modernen Tools automatisieren wir Ihre Geschäftsprozesse. Intelligente Systeme für bessere Ergebnisse mit weniger Aufwand.',
             'nav-services': 'Services',
             'nav-credentials': 'Zertifizierungen',
             'nav-ai-server': 'AI Server Setup',
@@ -991,6 +1008,17 @@
             'all-services-title': 'All Services at a Glance',
             'about-title': 'Why Crowdcompany?',
             'about-lead': 'Multi-Cloud AI Solutions – certified in AWS, Azure & Google Cloud.',
+            'about-text-1': 'Creating intelligent systems through automation enables you to achieve better results with less effort. With modern and affordable technologies like cloud computing and AI available, we measure your results, adjust parameters and optimize iteratively – until the final result is good for you!',
+            'about-text-2': 'For over 15 years (since 2011) we have been building intelligent systems with automation. When my own business was impacted by AI, I focused on AI and now offer companies modern cloud and AI solutions.',
+            'regions-badge': 'Our Expertise for Your Success',
+            'pillar-1-title': 'Multi-Cloud Expertise',
+            'pillar-1-desc': 'Certified specialists for AWS, Azure & Google Cloud. We find the right cloud strategy for your individual requirements.',
+            'pillar-2-title': 'AI & Machine Learning',
+            'pillar-2-desc': 'From Generative AI to ML-Pipelines – we implement AI solutions that create real value for your business.',
+            'pillar-3-title': 'Modern Technologies',
+            'pillar-3-desc': 'DevOps, N8N Workflow Automation, Flowise & Infrastructure as Code. We build scalable and maintainable systems.',
+            'pillar-4-title': 'Security & Compliance',
+            'pillar-4-desc': 'Security by Design for all cloud projects. We ensure secure and compliant infrastructures.',
             'about-subtitle': 'About Raimund Bauer',
             'team-name': 'Raimund Bauer',
             'team-role': 'Founder & Cloud & AI Specialist',
@@ -1001,6 +1029,12 @@
             'ai-server-btn': 'Request AI Server Now',
             'additional-title': 'Additional Services',
             'additional-subtitle': 'Tailored solutions for your business',
+            'additional-card-1-title': 'App Development',
+            'additional-card-1-desc': 'Modern scalable applications that work on any web-enabled device. From conception to launch – we guide you through the entire development process.',
+            'additional-card-2-title': 'SaaS Development',
+            'additional-card-2-desc': 'Development of Software-as-a-Service solutions. Scalable, secure and efficient – for recurring revenue and satisfied customers.',
+            'additional-card-3-title': 'Process Automation',
+            'additional-card-3-desc': 'With N8N, Flowise and modern tools we automate your business processes. Intelligent systems for better results with less effort.',
             'nav-services': 'Services',
             'nav-credentials': 'Certifications',
             'nav-ai-server': 'AI Server Setup',
@@ -1054,8 +1088,8 @@
         const pageData = pageContentData[lang];
 
         // Update Services section
-        const servicesTitle = document.querySelector('.section-title h3');
-        const servicesSubtitle = document.querySelector('.section-title p');
+        const servicesTitle = document.getElementById('services-title');
+        const servicesSubtitle = document.getElementById('services-subtitle');
         if (servicesTitle) servicesTitle.textContent = pageData['services-title'];
         if (servicesSubtitle) servicesSubtitle.textContent = pageData['services-subtitle'];
 
@@ -1067,12 +1101,15 @@
         }
 
         // Update "Alle Leistungen im Überblick"
-        const allServicesTitle = document.querySelector('.section-title[style*="margin: 2rem 0"] h3');
+        const allServicesTitle = document.getElementById('all-services-title');
         if (allServicesTitle) allServicesTitle.textContent = pageData['all-services-title'];
 
         // Update About section
-        const aboutTitle = document.querySelector('.about-intro h2');
-        const aboutLead = document.querySelector('.about-lead');
+        const aboutTitle = document.getElementById('about-title');
+        const aboutLead = document.getElementById('about-lead');
+        const aboutText1 = document.getElementById('about-text-1');
+        const aboutText2 = document.getElementById('about-text-2');
+        const regionsBadge = document.getElementById('regions-badge');
         const aboutSubtitle = document.querySelector('.about-subtitle');
         const teamName = document.querySelector('.team-name');
         const teamRole = document.querySelector('.team-role');
@@ -1081,6 +1118,31 @@
 
         if (aboutTitle) aboutTitle.textContent = pageData['about-title'];
         if (aboutLead) aboutLead.textContent = pageData['about-lead'];
+        if (aboutText1) aboutText1.textContent = pageData['about-text-1'];
+        if (aboutText2) aboutText2.textContent = pageData['about-text-2'];
+        if (regionsBadge) regionsBadge.textContent = pageData['regions-badge'];
+
+        // Update pillars (4 items)
+        for (let i = 1; i <= 4; i++) {
+            const pillarTitle = document.getElementById(`pillar-${i}-title`);
+            const pillarDesc = document.getElementById(`pillar-${i}-desc`);
+            if (pillarTitle) pillarTitle.textContent = pageData[`pillar-${i}-title`];
+            if (pillarDesc) pillarDesc.textContent = pageData[`pillar-${i}-desc`];
+        }
+
+        // Update additional services
+        const additionalTitle = document.getElementById('additional-title');
+        const additionalSubtitle = document.getElementById('additional-subtitle');
+        if (additionalTitle) additionalTitle.textContent = pageData['additional-title'];
+        if (additionalSubtitle) additionalSubtitle.textContent = pageData['additional-subtitle'];
+
+        // Update additional services cards (3 cards)
+        for (let i = 1; i <= 3; i++) {
+            const cardTitle = document.getElementById(`additional-card-${i}-title`);
+            const cardDesc = document.getElementById(`additional-card-${i}-desc`);
+            if (cardTitle) cardTitle.textContent = pageData[`additional-card-${i}-title`];
+            if (cardDesc) cardDesc.textContent = pageData[`additional-card-${i}-desc`];
+        }
         if (aboutSubtitle) aboutSubtitle.textContent = pageData['about-subtitle'];
         if (teamName) teamName.textContent = pageData['team-name'];
         if (teamRole) teamRole.textContent = pageData['team-role'];
@@ -1094,12 +1156,6 @@
         if (aiServerTitle) aiServerTitle.textContent = pageData['ai-server-title'];
         if (aiServerDesc) aiServerDesc.textContent = pageData['ai-server-desc'];
         if (aiServerBtn) aiServerBtn.textContent = pageData['ai-server-btn'];
-
-        // Update Additional Services section
-        const additionalTitle = document.querySelector('#additional-services .section-title h3');
-        const additionalSubtitle = document.querySelector('#additional-services .section-title p');
-        if (additionalTitle) additionalTitle.textContent = pageData['additional-title'];
-        if (additionalSubtitle) additionalSubtitle.textContent = pageData['additional-subtitle'];
 
         // Update Navigation links
         const navLinks = document.querySelectorAll('nav a');
@@ -1160,8 +1216,8 @@
     <!-- Services Section -->
     <section id="services" style="background-color: #ffffff;">
         <div class="section-title">
-            <h3>Unsere KI & Cloud Services</h3>
-            <p>Multi-Cloud Expertise für Ihr Unternehmen</p>
+            <h3 id="services-title">Unsere KI & Cloud Services</h3>
+            <p id="services-subtitle">Multi-Cloud Expertise für Ihr Unternehmen</p>
         </div>
 
         <!-- Zielgruppen -->
@@ -1192,7 +1248,7 @@
             </div>
         </div>
 
-        <h3 class="section-title" style="margin: 2rem 0;">Alle Leistungen im Überblick</h3>
+        <h3 class="section-title" id="all-services-title" style="margin: 2rem 0;">Alle Leistungen im Überblick</h3>
 
         <div class="service-grid">
             <div class="service-item">
@@ -1279,34 +1335,34 @@
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="about-intro">
-            <h2>Warum Crowdcompany?</h2>
-            <p class="about-lead">Multi-Cloud AI Solutions – zertifiziert für AWS, Azure & Google Cloud.</p>
-            <p class="about-text-large">Die Erstellung intelligenter Systeme mittels Automation ermöglicht Ihnen, bessere Ergebnisse mit geringerem Einsatz zu erzielen. Da moderne und bezahlbare Technologien wie Cloud Computing und KI zur Verfügung stehen, messen wir Ihr Ergebnis, verändern Parameter und optimieren iterativ – bis das End-Ergebnis für Sie gut ist!</p>
-            <p class="about-text-large">Seit über 15 Jahren (seit 2011) bauen wir intelligente Systeme mit Automation. Als mein eigenes Geschäft durch AI beeinflusst wurde, habe ich mich auf AI fokussiert und biete jetzt Unternehmen moderne Cloud- und KI-Lösungen.</p>
-            <span class="regions-badge">Unsere Expertise für Ihren Erfolg</span>
+            <h2 id="about-title">Warum Crowdcompany?</h2>
+            <p class="about-lead" id="about-lead">Multi-Cloud AI Solutions – zertifiziert für AWS, Azure & Google Cloud.</p>
+            <p class="about-text-large" id="about-text-1">Die Erstellung intelligenter Systeme mittels Automation ermöglicht Ihnen, bessere Ergebnisse mit geringerem Einsatz zu erzielen. Da moderne und bezahlbare Technologien wie Cloud Computing und KI zur Verfügung stehen, messen wir Ihr Ergebnis, verändern Parameter und optimieren iterativ – bis das End-Ergebnis für Sie gut ist!</p>
+            <p class="about-text-large" id="about-text-2">Seit über 15 Jahren (seit 2011) bauen wir intelligente Systeme mit Automation. Als mein eigenes Geschäft durch AI beeinflusst wurde, habe ich mich auf AI fokussiert und biete jetzt Unternehmen moderne Cloud- und KI-Lösungen.</p>
+            <span class="regions-badge" id="regions-badge">Unsere Expertise für Ihren Erfolg</span>
         </div>
 
         <!-- 4 Säulen -->
         <div class="pillars-grid">
             <div class="pillar-card">
                 <span class="pillar-icon">☁️</span>
-                <h4>Multi-Cloud Expertise</h4>
-                <p>Zertifizierte Spezialisten für AWS, Azure & Google Cloud. Wir finden die richtige Cloud-Strategie für Ihre individuellen Anforderungen.</p>
+                <h4 id="pillar-1-title">Multi-Cloud Expertise</h4>
+                <p id="pillar-1-desc">Zertifizierte Spezialisten für AWS, Azure & Google Cloud. Wir finden die richtige Cloud-Strategie für Ihre individuellen Anforderungen.</p>
             </div>
             <div class="pillar-card">
                 <span class="pillar-icon">🧠</span>
-                <h4>AI & Machine Learning</h4>
-                <p>Von Generative AI bis ML-Pipelines – wir implementieren KI-Lösungen, die echten Mehrwert für Ihr Unternehmen schaffen.</p>
+                <h4 id="pillar-2-title">AI & Machine Learning</h4>
+                <p id="pillar-2-desc">Von Generative AI bis ML-Pipelines – wir implementieren KI-Lösungen, die echten Mehrwert für Ihr Unternehmen schaffen.</p>
             </div>
             <div class="pillar-card">
                 <span class="pillar-icon">⚡</span>
-                <h4>Moderne Technologien</h4>
-                <p>DevOps, N8N Workflow Automation, Flowise & Infrastructure as Code. Wir bauen skalierbare und wartbare Systeme.</p>
+                <h4 id="pillar-3-title">Moderne Technologien</h4>
+                <p id="pillar-3-desc">DevOps, N8N Workflow Automation, Flowise & Infrastructure as Code. Wir bauen skalierbare und wartbare Systeme.</p>
             </div>
             <div class="pillar-card">
                 <span class="pillar-icon">🔒</span>
-                <h4>Sicherheit & Compliance</h4>
-                <p>Security by Design für alle Cloud-Projekte. Wir sorgen für sichere und compliant Infrastrukturen.</p>
+                <h4 id="pillar-4-title">Sicherheit & Compliance</h4>
+                <p id="pillar-4-desc">Security by Design für alle Cloud-Projekte. Wir sorgen für sichere und compliant Infrastrukturen.</p>
             </div>
         </div>
 
@@ -1352,21 +1408,21 @@
     <!-- Additional Services Section -->
     <section id="additional-services" class="additional-services">
         <div class="section-title">
-            <h3>Weitere Serviceleistungen</h3>
-            <p>Maßgeschneiderte Lösungen für Ihr Unternehmen</p>
+            <h3 id="additional-title">Weitere Serviceleistungen</h3>
+            <p id="additional-subtitle">Maßgeschneiderte Lösungen für Ihr Unternehmen</p>
         </div>
         <div class="additional-cards">
             <div class="additional-card">
-                <h4>App-Entwicklung</h4>
-                <p>Moderne skalierbare Anwendungen, die auf jedem webfähigen Endgerät funktionieren. Von der Konzeption bis zum Launch – wir begleiten Sie durch den gesamten Entwicklungsprozess.</p>
+                <h4 id="additional-card-1-title">App-Entwicklung</h4>
+                <p id="additional-card-1-desc">Moderne skalierbare Anwendungen, die auf jedem webfähigen Endgerät funktionieren. Von der Konzeption bis zum Launch – wir begleiten Sie durch den gesamten Entwicklungsprozess.</p>
             </div>
             <div class="additional-card">
-                <h4>SaaS-Entwicklung</h4>
-                <p>Entwicklung von Software-as-a-Service-Lösungen. Skalierbar, sicher und effizient – für wiederkehrende Einnahmen und zufriedene Kunden.</p>
+                <h4 id="additional-card-2-title">SaaS-Entwicklung</h4>
+                <p id="additional-card-2-desc">Entwicklung von Software-as-a-Service-Lösungen. Skalierbar, sicher und effizient – für wiederkehrende Einnahmen und zufriedene Kunden.</p>
             </div>
             <div class="additional-card">
-                <h4>Prozess-Automatisierung</h4>
-                <p>Mit N8N, Flowise und modernen Tools automatisieren wir Ihre Geschäftsprozesse. Intelligente Systeme für bessere Ergebnisse mit weniger Aufwand.</p>
+                <h4 id="additional-card-3-title">Prozess-Automatisierung</h4>
+                <p id="additional-card-3-desc">Mit N8N, Flowise und modernen Tools automatisieren wir Ihre Geschäftsprozesse. Intelligente Systeme für bessere Ergebnisse mit weniger Aufwand.</p>
             </div>
         </div>
         <div style="text-align: center; margin-top: calc(var(--pico-spacing) * 4);">
@@ -1406,10 +1462,10 @@
             </div>
             <div class="footer-section">
                 <img src="https://mqlstreaming.s3.eu-west-1.amazonaws.com/corporate-identity/RaimundBauerRundklein.png" alt="Raimund Bauer Logo" class="footer-logo">
-                <p style="font-weight: 600; font-size: 1rem; margin-bottom: 8px;">Crowdcompany UG</p>
-                <p style="font-size: 0.9rem; margin-bottom: 8px;">Cloud Solutions & AI Consulting</p>
-                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="tel:+4924862379991" style="color: inherit;">Telefon: +49 2486 2379991</a></p>
-                <p style="font-size: 0.9rem; margin: 0;"><a href="mailto:raimund.bauer@crowdcompany-ug.com" style="color: inherit;">E-Mail: raimund.bauer@crowdcompany-ug.com</a></p>
+                <p style="font-weight: 600; font-size: 1rem; margin-bottom: 8px; color: #ffffff;">Crowdcompany UG</p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px; color: #ffffff;">Cloud Solutions & AI Consulting</p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px; color: #ffffff;"><a href="tel:+4924862379991" style="color: #ffffff;">Telefon: +49 2486 2379991</a></p>
+                <p style="font-size: 0.9rem; margin: 0; color: #ffffff;"><a href="mailto:raimund.bauer@crowdcompany-ug.com" style="color: #ffffff;">E-Mail: raimund.bauer@crowdcompany-ug.com</a></p>
             </div>
         </div>
         <div class="footer-legal">
@@ -1417,7 +1473,7 @@
             <a href="https://s3.eu-central-1.amazonaws.com/crowdcompany-impressum/DATENSCHUTZERKLAERUNG-PRIVACYPOLICY.html" target="_blank" id="footer-privacy-link">Datenschutz</a>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Crowdcompany UG. Alle Rechte vorbehalten.</p>
+            <p style="color: #ffffff;">&copy; 2026 Crowdcompany UG. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
