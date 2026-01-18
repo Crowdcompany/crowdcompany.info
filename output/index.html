@@ -37,23 +37,18 @@
         .hero-section {
             position: relative;
             width: 100%;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                        url('https://mqlstreaming.s3.eu-west-1.amazonaws.com/corporate-identity/Header20260117-1600px.jpg') center/cover no-repeat;
-            padding: calc(var(--pico-spacing) * 6) var(--pico-spacing);
+            padding: 180px 0 0 0;
+            margin: 0;
             color: white;
             box-sizing: border-box;
         }
 
-        .hero-section h1 {
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            margin-bottom: var(--pico-spacing);
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+            padding: 0;
         }
 
         .hero-tagline {
@@ -791,7 +786,7 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <h1>Multi-Cloud AI Solutions</h1>
+        <img src="https://mqlstreaming.s3.eu-west-1.amazonaws.com/corporate-identity/Header20260117-1600px.jpg" alt="Multi-Cloud AI Solutions Header" class="hero-image">
         <p class="hero-tagline">
             <a href="https://www.youtube.com/@premiumbusinessautomation/videos" target="_blank" rel="noopener noreferrer" class="hero-play-btn" aria-label="Videos auf YouTube ansehen">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
